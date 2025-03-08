@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "vite build",
-    "dev": "vite",
+    "dev": "concurrently --kill-others-on-fail \"cd ./api && npm install && npm run dev\" \"wait-on tcp:3000 && vite\"",
     "preview": "vite preview",
     "fmt": "prettier --write \"src/**/*.{js,jsx,css,html}\"",
     "lint": "eslint",
