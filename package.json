@@ -12,6 +12,10 @@
   "license": "ISC",
   "packageManager": "pnpm@10.6.1",
   "devDependencies": {
+    "@types/eslint": "^9.6.1",
+    "eslint": "9.9.1",
+    "eslint-config-prettier": "9.1.0",
+    "globals": "15.9.0",
     "prettier": "^3.5.3"
   }
 }
