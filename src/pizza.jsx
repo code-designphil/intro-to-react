@@ -1,10 +1,10 @@
 export default function Pizza(props) {
-    const { name, ingredients, price } = props;
+    const { name, description, imageSrc } = props;
     return (
         <div className="pizza" >
             <h2>{name}</h2>
-            <p>{ingredients}</p>
-            <p>{price}</p>
+            <p>{description}</p>
+            <img src={imageSrc} alt="" />
         </div>
     );
 }

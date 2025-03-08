@@ -8,20 +8,20 @@ const App = () => {
       <Pizza
         key={0}
         name="Pepperoni"
-        ingredients="Pepperoni, cheese, tomato sauce"
-        price="$10.99"
+        description="Pepperoni, cheese, tomato sauce"
+        imageSrc="public/pizzas/pepperoni.webp"
       />
       <Pizza
         key={1}
         name="Margherita"
-        ingredients="Tomato, cheese, basil"
-        price="$9.99"
+        description="Tomato, cheese, basil"
+        imageSrc="public/pizzas/mediterraneo.webp"
       />
       <Pizza
         key={2}
         name="Hawaiian"
-        ingredients="Ham, pineapple, cheese, tomato sauce"
-        price="$12.99"
+        description="Ham, pineapple, cheese, tomato sauce"
+        imageSrc="public/pizzas/hawaiian.webp"
       />
     </div>
   );
