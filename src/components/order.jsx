@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import usePriceFormat from "../hooks/i18n";
+import { CartContext } from "./contexts";
 import Pizza from "./pizza";
 import Cart from "./cart";
 
@@ -7,7 +8,7 @@ export default function Order() {
   const [pizzaTypes, setPizzaTypes] = useState([]);
   const [pizzaType, setPizzaType] = useState("pepperoni");
   const [pizzaSize, setPizzaSize] = useState("M");
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useContext(CartContext);
   const [loading, setLoading] = useState(true);
   const i18nPriceFormatter = usePriceFormat();
 
