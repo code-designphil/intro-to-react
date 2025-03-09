@@ -1,7 +1,7 @@
-export default function usePriceFormat(_currency = "USD") {
+export default function usePriceFormat(currency = "USD") {
   const intl = Intl.NumberFormat("en-US", {
     style: "currency",
-    currency: _currency,
+    currency: currency,
   });
 
   return intl;

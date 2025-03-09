@@ -1,5 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import Header from "./components/header.jsx";
 import PizzaOfTheDay from "./components/pizza-of-the-day.jsx";
 import Order from "./components/order.jsx";
 
@@ -7,7 +8,7 @@ const App = () => {
   return (
     <StrictMode>
       <div>
-        <h1>Padre Gino's</h1>
+        <Header />
         <Order />
         <PizzaOfTheDay />
       </div>
