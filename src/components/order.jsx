@@ -8,27 +8,19 @@ const intl = Intl.NumberFormat("en-US", {
 
 export default function Order() {
   const [pizzaTypes, setPizzaTypes] = useState([]);
-  const [pizzaType, setPizzaType] = useState("Pepperoni");
+  const [pizzaType, setPizzaType] = useState("pepperoni");
   const [pizzaSize, setPizzaSize] = useState("M");
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   let price, selectedPizza;
 
   if (!loading) {
     selectedPizza = pizzaTypes.find((pizza) => pizzaType === pizza.id);
+    price = selectedPizza.sizes[pizzaSize];
   }
 
   async function fetchPizzaTypes() {
-    await new Promise((resolve) => setTimeout(resolve, 10000));
-
     const response = await fetch("/api/pizzas");
-    if (!response.ok) {
-      setLoading(false);
-      throw new Error(
-        `Failed to fetch pizza types. \n Status ${response.status} \n Reason: ${response.statusText}`,
-      );
-    }
     const data = await response.json();
     setPizzaTypes(data);
     setLoading(false);
@@ -109,11 +101,11 @@ export default function Order() {
         <div className="order-pizza">
           <Pizza
             key={0}
-            name="Pepperoni"
-            description="Pepperoni, cheese, tomato sauce"
-            imageSrc="public/pizzas/pepperoni.webp"
+            name={selectedPizza?.name}
+            description={selectedPizza?.description}
+            imageSrc={selectedPizza?.image}
           />
-          <p>$9.90</p>
+          <p>{intl.format(price)}</p>
         </div>
       </form>
     </div>
