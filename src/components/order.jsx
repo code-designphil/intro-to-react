@@ -1,16 +1,13 @@
 import { useEffect, useState } from "react";
+import usePriceFormat from "../hooks/i18n";
 import Pizza from "./pizza";
-
-const intl = Intl.NumberFormat("en-US", {
-  style: "currency",
-  currency: "USD",
-});
 
 export default function Order() {
   const [pizzaTypes, setPizzaTypes] = useState([]);
   const [pizzaType, setPizzaType] = useState("pepperoni");
   const [pizzaSize, setPizzaSize] = useState("M");
   const [loading, setLoading] = useState(true);
+  const i18nPriceFormatter = usePriceFormat();
 
   let price, selectedPizza;
 
@@ -105,7 +102,7 @@ export default function Order() {
             description={selectedPizza?.description}
             imageSrc={selectedPizza?.image}
           />
-          <p>{intl.format(price)}</p>
+          <p>{i18nPriceFormatter.format(price)}</p>
         </div>
       </form>
     </div>
