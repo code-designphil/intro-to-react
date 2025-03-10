@@ -1,4 +1,4 @@
-import usePriceFormat from "../hooks/i18n";
+import { usePriceFormat } from "../hooks/i18n";
 import usePizzaOfTheDay from "../hooks/usePizzaOfTheDay";
 
 export default function PizzaOfTheDay() {

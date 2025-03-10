@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { createLazyFileRoute } from "@tanstack/react-router";
-import usePriceFormat from "../hooks/i18n";
+import { usePriceFormat } from "../hooks/i18n";
 import { CartContext } from "../components/contexts";
 import Pizza from "../components/pizza";
 import Cart from "../components/cart";

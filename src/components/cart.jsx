@@ -1,4 +1,4 @@
-import usePriceFormat from "../hooks/i18n";
+import { usePriceFormat } from "../hooks/i18n";
 
 export default function Cart({ cart, checkout }) {
   const i18nPriceFormatter = usePriceFormat();
