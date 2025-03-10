@@ -1,10 +1,10 @@
 import { createLazyFileRoute, Link } from "@tanstack/react-router";
 
 export const Route = createLazyFileRoute("/")({
-  component: RouteComponent,
+  component: Index,
 });
 
-function RouteComponent() {
+function Index() {
   return (
     <div className="index">
       <div className="index-brand">
@@ -17,6 +17,9 @@ function RouteComponent() {
         </li>
         <li>
           <Link to="/past">Past Orders</Link>
+        </li>
+        <li>
+          <Link to="/contact">Contact Us</Link>
         </li>
       </ul>
     </div>
