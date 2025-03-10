@@ -19,6 +19,10 @@ function Contact() {
     },
   });
 
+  if (mutation.isError) {
+    return <h3>Error!</h3>;
+  }
+
   return (
     <div className="contact">
       <h2>Contact</h2>
