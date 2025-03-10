@@ -20,7 +20,7 @@ const testPizza = {
 
 test("gives null when first called", async () => {
   fetchMocker.mockResponseOnce(JSON.stringify(testPizza));
-  const { result } = renderHook(() => usePizzaOfTheDay())
+  const { result } = renderHook(() => usePizzaOfTheDay());
   expect(result.current).toBeNull();
 });
 
